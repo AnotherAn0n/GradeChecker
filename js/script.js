@@ -1,6 +1,10 @@
 const main = document.querySelector("main");
-const container = document.querySelector(".container")
-const items = "Technika Przyroda Muzyka Plastyka Biologia Chemia E.D.B. Fizyka Geografia Historia Informatyka J.Angielski J.Niemiecki J.Polski Matematyka W.O.S. W.F.".split(" ")
+const container = document.querySelector(".container");
+const items =
+	"Technika Przyroda Muzyka Plastyka Biologia Chemia E.D.B. Fizyka Geografia Historia Informatyka J.Angielski J.Niemiecki J.Polski Matematyka W.O.S. W.F.".split(
+		" ",
+	);
+const avgOutput = document.querySelector(".avg-output");
 // const items = "Technika Przyroda".split(" ");
 let terms;
 let sum = [];
@@ -19,19 +23,19 @@ const calcAvg = () => {
 			sum += term;
 		}
 		avg = sum / terms.length;
-        if(avg >= 4.75) {
-            container.classList.add("good")
-        }else {
-            container.classList.remove("good")
-        }
-        console.log(avg);
+		if (avg >= 4.75) {
+			container.classList.add("good");
+		} else {
+			container.classList.remove("good");
+		}
+		avgOutput.textContent = Math.round(avg * 100) / 100;
 	}
 };
 const createAllItems = () => {
 	items.forEach((item) => {
 		createItem(item);
 	});
-	main.innerHTML += '<button class="calc-btn">Calculate!</button>';
+	main.innerHTML += '<button class="calc-btn">Oblicz!</button>';
 	calcBtn = document.querySelector(".calc-btn");
 	calcBtn.addEventListener("click", calcAvg);
 };

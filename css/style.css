@@ -34,6 +34,7 @@ body {
   left: 10%;
   width: 20px;
   animation: stripeOut 0.3s;
+  z-index: 0;
 }
 .container.good::after {
   animation: stripeIn 0.3s;
@@ -45,6 +46,7 @@ header {
   font-size: 2em;
   text-align: center;
   align-self: center;
+  z-index: 1;
 }
 
 main {
@@ -52,14 +54,16 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 3em;
+  z-index: 1;
 }
 
 .average {
   margin: 5px;
   width: 300px;
+  max-width: 70%;
   height: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   align-items: center;
   text-align: center;
   font-size: 2rem;
@@ -82,9 +86,7 @@ main {
 }
 
 .calc-btn {
-  position: absolute;
-  bottom: 50px;
-  right: 10%;
+  margin: 2em;
   display: flex;
   align-items: center;
   height: 40px;
